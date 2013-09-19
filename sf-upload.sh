@@ -3,7 +3,7 @@
 # SourceForge release upload 
 #
 
-REMOTE_PATH='/home/frs/project/h2non/frontstack/releases'
+REMOTE_PATH='/home/frs/project/frontstack/releases'
 MAYORVERSION=$1
 LOCALFILE="$2"
 
