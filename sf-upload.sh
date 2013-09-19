@@ -3,13 +3,11 @@
 # SourceForge release upload 
 #
 
-$REMOTE_PATH='/home/frs/project/h2non/frontstack/releases/'
-$PASSWORD=$1
-$MAYORVERSION=$2
-$FILENAME=$3
-$LOCALFILE="$4"
+REMOTE_PATH='/home/frs/project/h2non/frontstack/releases'
+MAYORVERSION=$1
+LOCALFILE="$2"
 
-if [ -z $password ] || [ -z $MAYORVERSION ] || [ -z $FILENAME ]; then
+if [ -z $MAYORVERSION ] || [ -z $LOCALFILE ]; then
   echo 'Missing required arguments. Cannot continue'
   exit 1
 fi
@@ -20,4 +18,4 @@ if [ ! -f $LOCALFILE ]; then
 fi
 
 echo 'Publishing the release...'
-scp h2non:$PASSWORD@frs.sourceforce.net:$REMOTE_PATH
+scp $LOCALFILE h2non@frs.sourceforge.net:"$REMOTE_PATH/$MAYORVERSION/"
