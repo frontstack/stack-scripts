@@ -22,7 +22,7 @@ if [ -z $version ]; then
 fi
 
 if [ ! -d $OUTPUT_PATH ]; then
-	mkdir $OUTPUT_PATH
+  mkdir $OUTPUT_PATH
 fi
 
 echo "Generating the release file in: $OUTPUT_PATH"
