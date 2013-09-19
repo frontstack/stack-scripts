@@ -5,10 +5,7 @@ OUTPUT_PATH="../releases" #`dirname $(readlink -f "$0")`"/../releases/"
 
 read -p "Generate new release? (y/N): " input
 
-case $input in y|Y|yes|YES|Yes)
-  echo " "
-;;
-*)
+case $input in n|N|No|NO)
   echo "Exiting."
   exit 0
 ;;
@@ -31,5 +28,5 @@ sleep 1
 cd "$ENV_PATH"
 
 tar cvzf "$OUTPUT_PATH/frontstack-$version-x64.tar.gz" * \
-  --exclude .git \
-  --exclude *.a 
+--exclude .git \
+--exclude *.a 
