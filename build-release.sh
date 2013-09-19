@@ -27,6 +27,8 @@ sleep 1
 
 cd "$ENV_PATH"
 
-tar cvzf "$OUTPUT_PATH/frontstack-$version-x64.tar.gz" * \
+tar cvzf "$OUTPUT_PATH/frontstack-$version-x64.tar.gz" \
 --exclude .git \
---exclude *.a 
+--exclude "*.a" \
+*
+
