@@ -33,4 +33,3 @@ tar cvzf "$output_path/frontstack-$version-x64.tar.gz" \
 --exclude "packages/" \
 --exclude .DS_Store \
 *
-
