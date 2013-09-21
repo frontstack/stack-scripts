@@ -1,7 +1,7 @@
 #!/bin/bash
 
 env_path="$(echo `dirname $0`)/../frontstack-env-x64" #`dirname $(readlink -f "$0")`"/../frontstack-env-x64"
-output_path="../releases" #`dirname $(readlink -f "$0")`"/../releases/"
+output_path="../releases"
 
 read -p "Generate new release? (y/N): " input
 
