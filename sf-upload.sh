@@ -3,19 +3,19 @@
 # SourceForge release upload 
 #
 
-REMOTE_PATH='/home/frs/project/frontstack/releases'
-MAYORVERSION=$1
-LOCALFILE="$2"
+remote_path='/home/frs/project/frontstack/releases'
+mayor_version=$1
+local_file="$2"
 
-if [ -z $MAYORVERSION ] || [ -z $LOCALFILE ]; then
+if [ -z $mayor_version ] || [ -z $local_file ]; then
   echo 'Missing required arguments. Cannot continue'
   exit 1
 fi
 
-if [ ! -f $LOCALFILE ]; then
+if [ ! -f $local_file ]; then
   echo "Cannot find the local file..."
   exit 1
 fi
 
 echo 'Publishing the release...'
-scp $LOCALFILE h2non@frs.sourceforge.net:"$REMOTE_PATH/$MAYORVERSION/"
+scp $local_file h2non@frs.sourceforge.net:"$REMOTE_PATH/$mayor_version/"
