@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ENV_PATH="$(echo `dirname $0`)/../frontstack-env-x64" #`dirname $(readlink -f "$0")`"/../frontstack-env-x64"
-OUTPUT_PATH="../releases" #`dirname $(readlink -f "$0")`"/../releases/"
+env_path="$(echo `dirname $0`)/../frontstack-env-x64" #`dirname $(readlink -f "$0")`"/../frontstack-env-x64"
+output_path="../releases" #`dirname $(readlink -f "$0")`"/../releases/"
 
 read -p "Generate new release? (y/N): " input
 
@@ -18,18 +18,19 @@ if [ -z $version ]; then
   exit 0
 fi
 
-if [ ! -d $OUTPUT_PATH ]; then
-  mkdir $OUTPUT_PATH
+if [ ! -d $output_path ]; then
+  mkdir $output_path
 fi
 
-echo "Generating the release file in: $OUTPUT_PATH"
+echo "Generating the release file in: $output_path"
 sleep 1
 
-cd "$ENV_PATH"
+cd "$env_path"
 
-tar cvzf "$OUTPUT_PATH/frontstack-$version-x64.tar.gz" \
+tar cvzf "$output_path/frontstack-$version-x64.tar.gz" \
 --exclude .git \
 --exclude "*.a" \
+--exclude "packages/" \
 --exclude .DS_Store \
 *
 
