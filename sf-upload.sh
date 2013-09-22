@@ -18,5 +18,4 @@ if [ ! -f $local_file ]; then
 fi
 
 echo 'Publishing the release...'
-#rsync -e ssh "$local_file" "h2non@frs.sourceforge.net:$REMOTE_PATH/$mayor_version/"
-scp -r "$local_file" "h2non@frs.sourceforge.net:$REMOTE_PATH/$mayor_version/"
+scp "h2non@frs.sourceforge.net:$remote_path/$mayor_version/" "$local_file"
