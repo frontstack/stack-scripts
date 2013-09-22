@@ -18,4 +18,4 @@ if [ ! -f $local_file ]; then
 fi
 
 echo 'Publishing the release...'
-scp "h2non@frs.sourceforge.net:$remote_path/$mayor_version/" "$local_file"
+scp "$local_file" "h2non@frs.sourceforge.net:$remote_path/$mayor_version/"
